@@ -31,10 +31,15 @@ public class Main {
     public static void task2() {
         System.out.println("Задача2: ");
         int[] arr = generateRandomArray();
-        Arrays.sort(arr);
         int min = arr[0];
-        int max = arr[arr.length - 1];
-
+        int max = arr[0];
+        for (int element : arr) {
+            if (element > max) {
+                max = element;
+            } else if (element < min) {
+                min = element;
+            }
+        }
         System.out.println("Минимальная сумма трат за день составила " + min + " рублей. Максимальная сумма трат за день составила " + max + " рублей.");
     }
 
